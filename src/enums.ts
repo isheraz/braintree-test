@@ -1,0 +1,1 @@
+export enum APP_MODE { PROD = 'production', DEV = 'development' }

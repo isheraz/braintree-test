@@ -1,5 +1,5 @@
 {
-  "name": "isheraz",
+  "name": "backend",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "src",
   "projectType": "application",
@@ -10,7 +10,7 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/isheraz",
+        "outputPath": "dist/backend",
         "format": ["cjs"],
         "bundle": false,
         "main": "src/main.ts",
@@ -41,14 +41,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "isheraz:build"
+        "buildTarget": "backend:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "isheraz:build:development"
+          "buildTarget": "backend:build:development"
         },
         "production": {
-          "buildTarget": "isheraz:build:production"
+          "buildTarget": "backend:build:production"
         }
       }
     },
@@ -75,7 +75,7 @@
     },
     "docker-build": {
       "dependsOn": ["build"],
-      "command": "docker build -f Dockerfile . -t isheraz"
+      "command": "docker build -f Dockerfile . -t backend"
     }
   },
   "tags": []
