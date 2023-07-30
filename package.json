@@ -1,7 +1,14 @@
 {
   "name": "@backend/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Sheraz Ahmed",
+    "email": "hi@isheraz.com"
+  },
+  "repository": {
+    "git": "https://github.com/isheraz/braintree-test.git"
+  },
   "scripts": {
     "start": "nx serve",
     "build": "nx build",

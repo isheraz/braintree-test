@@ -1,1 +1,1 @@
-export enum APP_MODE { PROD = 'production', DEV = 'development' }
+export enum APP_MODE { PROD = 'production', DEV = 'development', STAG = 'staging' }
