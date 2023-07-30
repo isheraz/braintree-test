@@ -11,6 +11,10 @@ ENV PORT=3000
 
 WORKDIR /app
 
+RUN npm install -g nx
+RUN npm install
+RUN npm run build
+
 RUN addgroup --system backend && \
           adduser --system -G backend backend
 
