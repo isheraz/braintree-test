@@ -1,15 +1,14 @@
 import 'dotenv/config';
 import express from 'express';
-import { createPayment, executePayment } from './services/paypal';
+import { createPayment, executePayment } from './services/braintree';
+import { serverStart } from './services/main';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
-const app = express();
+export const app = express();
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Solution for Payment API, Test Implementation' });
-});
+app.get('/', serverStart);
 
 // Route to initiate the payment request
 app.post('/payment/create', createPayment);
@@ -20,4 +19,6 @@ app.post('/payment/execute', executePayment);
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
+  console.log(`[ ENV ] .env File`);
+  console.group(process.env);
 });
